@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Camiseta Ruby",
+    "sku": "RBY-001",
+    "price": 89.9,
+    "description": "Camiseta com logo Ruby",
+    "stock": 10
+  },
+  {
+    "name": "Caneca Rails",
+    "sku": "RLS-002",
+    "price": 49.5,
+    "description": "Caneca vermelha com logo Rails",
+    "stock": 25
+  },
+  {
+    "name": "Adesivo Sidekiq",
+    "sku": "SDK-003",
+    "price": 5.0,
+    "description": "Adesivo do Sidekiq para notebooks",
+    "stock": 100
+  },
+  {
+    "name": "Livro Ruby Avançado",
+    "sku": "RBY-004",
+    "price": 120.0,
+    "description": "Livro completo sobre Ruby",
+    "stock": 8
+  }
+]

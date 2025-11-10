@@ -1,0 +1,5 @@
+name,sku,price,description,stock
+Camiseta Ruby,RBY-001,89.9,Camiseta com logo Ruby,10
+Caneca Rails,RLS-002,49.5,Caneca vermelha com logo Rails,25
+Adesivo Sidekiq,SDK-003,5.0,Adesivo do Sidekiq para notebooks,100
+Livro Ruby Avançado,RBY-004,120.0,Livro completo sobre Ruby,8

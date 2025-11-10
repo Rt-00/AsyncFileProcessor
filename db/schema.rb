@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_11_10_162733) do
+ActiveRecord::Schema[8.1].define(version: 2025_11_10_163008) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.bigint "blob_id", null: false
     t.datetime "created_at", null: false
@@ -46,6 +46,16 @@ ActiveRecord::Schema[8.1].define(version: 2025_11_10_162733) do
     t.decimal "price", precision: 10, scale: 2
     t.string "sku"
     t.integer "stock", default: 0
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "uploads", force: :cascade do |t|
+    t.string "content_type"
+    t.datetime "created_at", null: false
+    t.text "error_message"
+    t.string "filename"
+    t.integer "product_count", default: 0
+    t.string "status", default: "pending"
     t.datetime "updated_at", null: false
   end
 
