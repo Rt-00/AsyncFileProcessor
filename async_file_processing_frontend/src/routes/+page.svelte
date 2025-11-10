@@ -1,10 +1,12 @@
 <script lang="ts">
 	import UploadsTable from '$lib/components/UploadsTable.svelte';
+	import { POLLING_INTERVAL } from '$lib/constants/upload.constants';
 	import { UploadService } from '$lib/services/upload.service';
 	import type { Upload } from '$lib/types/upload.types';
-	import { onMount } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 
 	let uploads: Upload[] = [];
+	let pollingIntervalId: ReturnType<typeof setInterval> | null = null;
 
 	async function loadUploads(): Promise<void> {
 		try {
@@ -14,8 +16,24 @@
 		}
 	}
 
+	function startPolling(): void {
+		pollingIntervalId = setInterval(loadUploads, POLLING_INTERVAL);
+	}
+
+	function stopPolling(): void {
+		if (pollingIntervalId) {
+			clearInterval(pollingIntervalId);
+			pollingIntervalId = null;
+		}
+	}
+
 	onMount(async () => {
 		await loadUploads();
+		startPolling();
+	});
+
+	onDestroy(() => {
+		stopPolling();
 	});
 </script>
 
