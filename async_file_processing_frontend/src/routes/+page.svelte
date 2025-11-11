@@ -1,4 +1,5 @@
 <script lang="ts">
+	import UploadForm from '$lib/components/UploadForm.svelte';
 	import UploadsTable from '$lib/components/UploadsTable.svelte';
 	import { POLLING_INTERVAL } from '$lib/constants/upload.constants';
 	import { UploadService } from '$lib/services/upload.service';
@@ -40,7 +41,7 @@
 <div class="flex min-h-screen flex-col items-center bg-gray-900 px-4 py-10">
 	<div class="w-full max-w-2xl rounded-2xl bg-gray-800 p-6 shadow-lg">
 		<h1 class="mb-6 text-center text-3xl font-bold text-white">Upload de Arquivos</h1>
-
+		<UploadForm onUploadSuccess={loadUploads} />
 		<UploadsTable {uploads} />
 	</div>
 </div>
